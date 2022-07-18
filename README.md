@@ -4,6 +4,6 @@ Tämä on tiralabra -kurssin harjoitustyöni, jossa käsittelen pakkausalgoritme
 
 ## Dokumentaatio
 
-- [Määrittelydokumentti](./Dokumentaatio/maarittelydokumentti.md)
+- [Määrittelydokumentti](./dokumentaatio/maarittelydokumentti.md)
 
 ## Viikkoraportit
