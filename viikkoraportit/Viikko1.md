@@ -3,7 +3,8 @@
 ## Tällä viikolla tehty
 
 - Perehdytty aihealueisiin ja valittu aihe
-- Perehdytty hyvin alustavasti Heffman ja Lempel Ziv algoritmeihin
+- Tutkittu ja testattu erillisenä Huffman algoritmin toimintaa Pythonilla
+- Perehdytty alustavasti Lempel Ziv algoritmiin
 - Git repositorio luotu
 - Määrittelydokumentti tehty
 - Projekti alustettu
@@ -15,15 +16,17 @@
 
 ### Tällä viikolla opin
 
-- Paljon uutta perustietoa Heffman ja Lempel Ziv algoritmeista.
+- Paljon uutta perustietoa Huffman ja Lempel Ziv algoritmeista, sekä tarkemmin Huffman Python toteutuksesta.
 
 ### Vaikeuksia/epäselvyyksiä
 
+- Huffman pakkauksen tallentaminen tiedostoon tuntuu vielä haastavalta ajatukselta, mutta perehdytään tähän lisää. 
+
 ## Teen seuraavaksi
 
-- Aloitan Heffman algoritmin ja ohjelman rungon toteutuksen (tarkoitus tehdä hyvin kevyt graafinen käyttöliittymä).
+- Aloitan Huffman algoritmin ja ohjelman rungon toteutuksen (tarkoitus tehdä hyvin kevyt graafinen käyttöliittymä tai tekstipohjainen sovellus).
 
 ## Aikaa käytetty tällä viikolla
 
-4 tuntia
+10 tuntia
 

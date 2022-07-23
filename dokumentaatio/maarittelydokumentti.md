@@ -22,10 +22,14 @@ Koska tässä tehdään ainakin puu, niin silloin voisi kuvitella O(nlogn) toteu
 
 ## Lähteet
 
-Lähdetään aluksi Wikipediasta liikkeelle ja katsotaan mihin asti pitää syventyä:
+Täällä selitetty hyvin Huffman algorimi ja samalla mallia pythontoteutukselle:
+- https://towardsdatascience.com/huffman-encoding-python-implementation-8448c3654328
 
+Tietysti myös Wikipediaa tutkittu tässä kohtaa:
 - https://en.wikipedia.org/wiki/Huffman_coding
 - https://en.wikipedia.org/wiki/Lempel%E2%80%93Ziv%E2%80%93Welch
+
+Sekä youtube -videoita algoritmeista, mutta näitä en muistanut listata ylös.
 
 ## Opinto-ohjelma
 
