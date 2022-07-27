@@ -9,3 +9,46 @@ Tämä on tiralabra -kurssin harjoitustyöni, jossa käsittelen pakkausalgoritme
 ## Viikkoraportit
 
 - [Viikko 1](./viikkoraportit/Viikko1.md)
+
+
+## Komentorivitoiminnot
+
+### Asennus
+
+Riippuvuudet asennetaan komennolla:
+
+```bash
+poetry install
+```
+
+### Ohjelman suorittaminen
+
+Ohjelma käynnistetään komennolla:
+
+```bash
+poetry run invoke start
+```
+
+### Testaus
+
+Testaus suoritetaan komennolla:
+
+```bash
+poetry run invoke test
+```
+
+### Testikattavuus
+
+Testikattavuusraportti luodaan komennolla:
+
+```bash
+poetry run invoke coverage-report
+```
+
+### Koodinlaatu
+
+Laaturaportti luodaan komennolla:
+
+```bash
+poetry run invoke lint
+```
