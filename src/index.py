@@ -1,6 +1,9 @@
 from huffman_algo import HuffmanAlgo
 
 def main():
+    """Käynnistää sovelluksen ja vastaa sovelluslogiikasta.
+    """
+
     file_path = str(input("Syötä pakattavan tiedoston polku: "))
     file = open(file_path, "r", encoding="utf-8")
     data = file.read()
