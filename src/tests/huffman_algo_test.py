@@ -17,3 +17,11 @@ class TestHuffmanAlgo(unittest.TestCase):
     def test_huffman_encoding(self):
         encoding, tree = self.huffman_algo.huffman_encoding()
         self.assertEqual(encoding, "111000001")
+
+    def test_encode_tree(self):
+        encoding, tree = self.huffman_algo.huffman_encoding()
+        self.assertEqual(self.huffman_algo.encode_tree(tree), "001b1c1a")
+
+    def test_huffman_decoding(self):
+        encoding, tree = self.huffman_algo.huffman_encoding()
+        self.assertEqual(self.huffman_algo.huffman_decoding(encoding, tree), "aaabbc")
