@@ -4,8 +4,8 @@ class Node:
     https://towardsdatascience.com/huffman-encoding-python-implementation-8448c3654328
 
     Attributes:
-        prob: int-arvo, joka kuvaa merkin esiintyvyyttä datassa.
-        symbol: str-arvo joka kertoo mikä merkki on kyseessä.
+        prob: int-arvo, joka kuvaa merkin/merkkien esiintyvyyttä datassa.
+        symbol: str-arvo joka kertoo mikä merkki/merkkijono on kyseessä.
         left: Node -luokan objekti joka on solmun vasen lapsi.
         right: Node -luokan objekti joka on solmun oikea lapsi.
         code: int-arvo, solmun sijainti puussa.
