@@ -17,9 +17,6 @@ class HuffmanAlgo:
         self.nodes = []
         self.symbol_with_probs = self.calculate_probability()
         self.symbols = self.symbol_with_probs.keys()
-        #self.probabilities = self.symbol_with_probs.values()
-        #print("symbols: ", self.symbols)
-        #print("probabilities: ", self.probabilities)
 
     def huffman_encoding(self):
         """Huffman algoritmi.
@@ -122,10 +119,8 @@ class HuffmanAlgo:
             self.encode_tree(node.left)
             self.encode_tree(node.right)
 
-        string = ''.join([str(item) for item in self.encoded_tree])
-        return string
-
-    #def decode_tree(self, encoded_tree):
+        encoded_tree_string = ''.join([str(item) for item in self.encoded_tree])
+        return encoded_tree_string
 
     def huffman_decoding(self, encoded_data, huffman_tree):
         """Huffman pakkauksen purku.
@@ -151,5 +146,5 @@ class HuffmanAlgo:
                 decoded_output.append(huffman_tree.symbol)
                 huffman_tree = tree_head
 
-        string = ''.join([str(item) for item in decoded_output])
-        return string
+        decoded_output_string = ''.join([str(item) for item in decoded_output])
+        return decoded_output_string
