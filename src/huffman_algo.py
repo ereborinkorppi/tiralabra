@@ -22,7 +22,7 @@ class HuffmanAlgo:
         """Huffman algoritmi.
 
         Returns:
-            Str muodossa oleva Huffman koodattu data, sekä solmut sisältävä puu.
+            Bytes muodossa oleva Huffman koodattu data, sekä solmut sisältävä puu.
         """
 
         for symbol in self.symbols:
@@ -43,7 +43,8 @@ class HuffmanAlgo:
             self.nodes.append(new_node)
 
         huffman_encoding = self.calculate_codes(self.nodes[0])
-        encoded_output = self.output_encoded(huffman_encoding)
+        encoded_string = self.output_encoded(huffman_encoding)
+        encoded_output = self.encoding_to_bytes(encoded_string)
         return encoded_output, self.nodes[0]
 
     codes = dict()
@@ -122,16 +123,17 @@ class HuffmanAlgo:
         encoded_tree_string = ''.join([str(item) for item in self.encoded_tree])
         return encoded_tree_string
 
-    def huffman_decoding(self, encoded_data, huffman_tree):
+    def huffman_decoding(self, encoded_bytes, huffman_tree):
         """Huffman pakkauksen purku.
 
         Args:
-            encoded_data: str -muotoinen 1 ja 0 sisältävä merkkijono.
+            encoded_byes: Bytes -muotoinen Huffman koodaus.
             huffman_tree: solmut sisältävä puu
 
         Returns:
             Huffman algoritmin pakkauksen purku str -muodossa.
         """
+        encoded_data = self.bytes_to_string(encoded_bytes)
         tree_head = huffman_tree
         decoded_output = []
         for bit in encoded_data:
@@ -148,3 +150,46 @@ class HuffmanAlgo:
 
         decoded_output_string = ''.join([str(item) for item in decoded_output])
         return decoded_output_string
+
+    def encoding_to_bytes(self, encoded_string):
+        """Str -Koodauksen muuttaminen tavuiksi apufunktio.
+
+        Args:
+            encoded_string: str -muotoinen 1 ja 0 sisältävä merkkijono.
+
+        Returns:
+            Huffman koodaus tavuiksi muutettuna.
+        """
+        encoding_bytes = bytearray()
+        extra_bits = 8 - (len(encoded_string) % 8)
+        for i in range(0, len(encoded_string), 8):
+            encoding_bytes.append(int(encoded_string[i:i+8], 2))
+        encoding_bytes.insert(0, extra_bits)
+        return bytes(encoding_bytes)
+
+    def bytes_to_string(self, encoding_bytes):
+        """Tavujen muuttaminen str -muotoon purun apufunktio.
+
+        Args:
+            encoding_bytes: Bytes -muotoinen Huffman koodaus.
+
+        Returns:
+            Str- muotoinen Huffman koodi.
+        """
+        extra_bits = encoding_bytes[0]
+        bytes_as_bits = ''.join(format(byte, '08b') for byte in encoding_bytes[1:])
+        bytes_as_string = str(bytes_as_bits)
+        replace_list = []
+        i = extra_bits
+        while i > 0:
+            replace_list.append(bytes_as_string[-i])
+            i -= 1
+        replace_string = ''.join(replace_list)
+        for char in replace_string:
+            if char == '1':
+                replace_string = replace_string[replace_string.index(char):]
+                break
+        removable = extra_bits + len(replace_string)
+        string_wihtout_extra_bits = bytes_as_string[:-removable]
+        huffman_output = string_wihtout_extra_bits + replace_string
+        return huffman_output
