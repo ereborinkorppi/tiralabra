@@ -5,20 +5,31 @@ def main():
     Kovin raakile vielä tässä vaiheessa.
     """
 
-    file_path = str(input("Syötä pakattavan tiedoston polku: "))
-    file_huffman = file_path[:-4] + "_huffman" + ".bin"
-    print(file_huffman)
-    file = open(file_path, "r", encoding="utf-8")
-    data = file.read()
-    huffman_algo = HuffmanAlgo(data)
-    encoding, tree = huffman_algo.huffman_encoding()
-    encoded_tree = huffman_algo.encode_tree(tree)
-    print("Koodattu puu:", encoded_tree)
-    with open(file_huffman, "wb") as binary_file:
-        binary_file.write(encoding)
-    bytes_from_file = open(file_huffman, "rb")
-    encoding_bytes_from_file = bytes_from_file.read()
-    print("Purettu teksti:", huffman_algo.huffman_decoding(encoding_bytes_from_file, tree))
+    selection = str(input("Haluatko pakata vai purkaa tiedoston?" +
+                          "\n1 = pakkaa\n2 = pura\nmuu lopettaa ohjelman\n"))
+    #Huffman testaus
+    if selection == "1":
+        file_path = str(input("Syötä pakattavan tiedoston polku: "))
+        file = open(file_path, "r", encoding="utf-8")
+        data = file.read()
+        file_huffman = file_path[:-4] + "_huffman" + ".bin"
+        huffman_algo = HuffmanAlgo(data)
+        encoding, tree = huffman_algo.huffman_encoding()
+        print(encoding)
+        print(tree)
+        with open(file_huffman, "wb") as binary_file:
+            binary_file.write(tree)
+            binary_file.write(encoding)
+        print("Pakattu tiedosto löytyy polusta:\n" + file_huffman)
+    elif selection == "2":
+        file_path = str(input("Syötä purettavan tiedoston polku: "))
+        huffman_bytes_from_file = open(file_path, "rb")
+        data = huffman_bytes_from_file.read()
+        huffman_algo = HuffmanAlgo(data)
+        print("Purettu Huffman teksti:")
+        print(huffman_algo.huffman_decoding())
+    else:
+        quit()
 
 if __name__ == "__main__":
     main()

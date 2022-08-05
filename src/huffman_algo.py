@@ -10,23 +10,22 @@ class HuffmanAlgo:
         """Luokan konstruktori.
 
         Args:
-            data: str-arvo, pakattava tekstidata.
+            data: Joko pakattava str- data tai purettava bytes- data.
         """
 
         self.data = data
         self.nodes = []
-        self.symbol_with_probs = self.calculate_probability()
-        self.symbols = self.symbol_with_probs.keys()
 
     def huffman_encoding(self):
         """Huffman algoritmi.
 
         Returns:
-            Bytes muodossa oleva Huffman koodattu data, sekä solmut sisältävä puu.
+            Bytes muodossa oleva Huffman koodattu data, sekä koodattu puu.
         """
-
-        for symbol in self.symbols:
-            self.nodes.append(Node(self.symbol_with_probs.get(symbol), symbol))
+        symbol_with_probs = self.calculate_probability()
+        symbols = symbol_with_probs.keys()
+        for symbol in symbols:
+            self.nodes.append(Node(symbol_with_probs.get(symbol), symbol))
 
         while len(self.nodes) > 1:
             self.nodes = sorted(self.nodes, key=lambda x: x.prob)
@@ -44,8 +43,9 @@ class HuffmanAlgo:
 
         huffman_encoding = self.calculate_codes(self.nodes[0])
         encoded_string = self.output_encoded(huffman_encoding)
+        encoded_tree = self.encode_tree(self.nodes[0])
         encoded_output = self.encoding_to_bytes(encoded_string)
-        return encoded_output, self.nodes[0]
+        return encoded_output, encoded_tree
 
     codes = dict()
 
@@ -110,7 +110,7 @@ class HuffmanAlgo:
             node: tämänhetkinen solmu.
 
         Returns:
-            Koodattu Huffmanpuu str -muodossa.
+            Koodattu Huffmanpuu bytes -muodossa.
         """
         if node.left is None and node.right is None:
             self.encoded_tree.append(1)
@@ -121,19 +121,46 @@ class HuffmanAlgo:
             self.encode_tree(node.right)
 
         encoded_tree_string = ''.join([str(item) for item in self.encoded_tree])
-        return encoded_tree_string
+        encoded_tree_string = encoded_tree_string + "  "
+        return bytes(encoded_tree_string, 'utf-8')
 
-    def huffman_decoding(self, encoded_bytes, huffman_tree):
-        """Huffman pakkauksen purku.
+    i = 0
+
+    def decode_tree(self, coded_tree):
+        """Luo uuden puun koodatusta datasta.
 
         Args:
-            encoded_byes: Bytes -muotoinen Huffman koodaus.
-            huffman_tree: solmut sisältävä puu
+            coded_tree: str- muotoinen koodattu puu.
+
+        Returns:
+            Huffman puu node -objekteina.
+        """
+        if coded_tree[self.i] == "1":
+            self.i += 1
+            new_node = Node(0, coded_tree[self.i])
+            self.nodes.append(new_node)
+
+        else:
+            self.i += 1
+            left_child = self.decode_tree(coded_tree)
+            self.i += 1
+            right_child = self.decode_tree(coded_tree)
+            new_node = Node(0, "0", left_child, right_child)
+            self.nodes.append(new_node)
+
+        return new_node
+
+    def huffman_decoding(self):
+        """Huffman pakkauksen purku.
 
         Returns:
             Huffman algoritmin pakkauksen purku str -muodossa.
         """
-        encoded_data = self.bytes_to_string(encoded_bytes)
+        #huffman_bytes_from_file = self.data
+        string_tree, counter = self.split_tree_coding(self.data)
+        coding_bytes = self.data[counter:]
+        encoded_data = self.bytes_to_string(coding_bytes)
+        huffman_tree = self.decode_tree(string_tree)
         tree_head = huffman_tree
         decoded_output = []
         for bit in encoded_data:
@@ -168,7 +195,7 @@ class HuffmanAlgo:
         return bytes(encoding_bytes)
 
     def bytes_to_string(self, encoding_bytes):
-        """Tavujen muuttaminen str -muotoon purun apufunktio.
+        """Huffman koodin muuttaminen str -muotoon purun apufunktio.
 
         Args:
             encoding_bytes: Bytes -muotoinen Huffman koodaus.
@@ -193,3 +220,25 @@ class HuffmanAlgo:
         string_wihtout_extra_bits = bytes_as_string[:-removable]
         huffman_output = string_wihtout_extra_bits + replace_string
         return huffman_output
+
+    def split_tree_coding(self, huffman_bytes_from_file):
+        """Puun irroittaminen bytes -tiedostosta purun apufunktio.
+
+        Args:
+            huffman_bytes_from_file: Bytes -muotoinen puu ja Huffman koodaus.
+
+        Returns:
+            Str- muotoinen koodattu puu, sekä int- muotoinen osoitin.
+        """
+        string_tree = ''
+        counter = 0
+        for current_char in huffman_bytes_from_file:
+            current_char = huffman_bytes_from_file[counter:counter+1].decode('utf-8')
+            counter += 1
+            if current_char == " ":
+                next_char = huffman_bytes_from_file[counter:counter+1].decode('utf-8')
+                if next_char == " ":
+                    break
+            string_tree = string_tree + current_char
+        counter += 1
+        return string_tree, counter
