@@ -15,8 +15,6 @@ def main():
         file_huffman = file_path[:-4] + "_huffman" + ".bin"
         huffman_algo = HuffmanAlgo(data)
         encoding, tree = huffman_algo.huffman_encoding()
-        print(encoding)
-        print(tree)
         with open(file_huffman, "wb") as binary_file:
             binary_file.write(tree)
             binary_file.write(encoding)
@@ -26,7 +24,7 @@ def main():
         huffman_bytes_from_file = open(file_path, "rb")
         data = huffman_bytes_from_file.read()
         huffman_algo = HuffmanAlgo(data)
-        print("Purettu Huffman teksti:")
+        print("Huffman koodauksella purettu teksti:")
         print(huffman_algo.huffman_decoding())
     else:
         quit()

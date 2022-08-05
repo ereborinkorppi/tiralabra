@@ -21,9 +21,5 @@ class TestHuffmanAlgo(unittest.TestCase):
         self.assertEqual(encoding, b'\x07\xe0\x01')
         self.assertEqual(tree, b'001B1C1A  ')
 
-    #def test_encode_tree(self):
-        #encoding, tree = self.huffman_algo.huffman_encoding()
-        #self.assertEqual(self.huffman_algo.encode_tree(tree), "001B1C1A")
-
     def test_huffman_decoding(self):
         self.assertEqual(self.huffman_algo_decoding.huffman_decoding(), "AAABBC")
