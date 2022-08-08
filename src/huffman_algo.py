@@ -156,7 +156,6 @@ class HuffmanAlgo:
         Returns:
             Huffman algoritmin pakkauksen purku str -muodossa.
         """
-        #huffman_bytes_from_file = self.data
         string_tree, counter = self.split_tree_coding(self.data)
         coding_bytes = self.data[counter:]
         encoded_data = self.bytes_to_string(coding_bytes)
