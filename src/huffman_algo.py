@@ -47,7 +47,7 @@ class HuffmanAlgo:
         encoded_output = self.encoding_to_bytes(encoded_string)
         return encoded_output, encoded_tree
 
-    codes = dict()
+    codes = {}
 
     def calculate_codes(self, node, val=''):
         """Solmujen koodauksen apufunktio.
@@ -77,7 +77,7 @@ class HuffmanAlgo:
         Returns:
             Merkit ja niiden esiintyvyys dictionary -listana.
         """
-        symbols = dict()
+        symbols = {}
         for element in self.data:
             if symbols.get(element) is None:
                 symbols[element] = 1

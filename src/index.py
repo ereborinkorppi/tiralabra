@@ -1,3 +1,4 @@
+import sys
 from huffman_algo import HuffmanAlgo
 from lz_seventyeight import LzSeventyeight
 
@@ -10,8 +11,8 @@ def main():
                           "\n1 = pakkaa\n2 = pura\nmuu lopettaa ohjelman\n"))
     if selection == "1":
         file_path = str(input("Syötä pakattavan tiedoston polku: "))
-        file = open(file_path, "r", encoding="utf-8")
-        data = file.read()
+        with open(file_path, "r", encoding="utf-8") as file:
+            data = file.read()
         #huffman pakkaus
         file_huffman = file_path[:-4] + "_huffman" + ".bin"
         huffman_algo = HuffmanAlgo(data)
@@ -32,8 +33,8 @@ def main():
         decompress_algo = str(input("Puretaanko Huffman vai LZ78 algoritmilla pakattu tiedosto" +
                           "\n1 = Huffman\n2 = LZ78\n"))
         file_path = str(input("Syötä purettavan tiedoston polku: "))
-        file = open(file_path, "rb")
-        data = file.read()
+        with open(file_path, "rb") as file:
+            data = file.read()
         #Huffman purku
         if decompress_algo == "1":
             huffman_algo = HuffmanAlgo(data)
@@ -46,7 +47,7 @@ def main():
             print(lz_seventyeight.decompress())
 
     else:
-        quit()
+        sys.exit()
 
 if __name__ == "__main__":
     main()
