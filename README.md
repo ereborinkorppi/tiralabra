@@ -6,12 +6,14 @@ Tämä on tiralabra -kurssin harjoitustyöni, jossa käsittelen pakkausalgoritme
 
 - [Määrittelydokumentti](./dokumentaatio/maarittelydokumentti.md)
 - [Testausdokumentti](./dokumentaatio/testausdokumentti.md)
+- [Toteutusdokumentti](./dokumentaatio/toteutusdokumentti.md)
 
 ## Viikkoraportit
 
 - [Viikko 1](./viikkoraportit/Viikko1.md)
 - [Viikko 2](./viikkoraportit/Viikko2.md)
 - [Viikko 3](./viikkoraportit/Viikko3.md)
+- [Viikko 4](./viikkoraportit/Viikko4.md)
 
 ## Komentorivitoiminnot
 
