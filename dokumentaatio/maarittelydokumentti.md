@@ -6,7 +6,7 @@ Teen projektini käyttäyn Pythonia, jota olen viime aikoina enemmän käyttäny
 
 ## Tietorakenteet ja algoritmit
 
-Ajattelin toteuttaa työni käyttäen Huffman ja Lempel Ziv algoritmeja. Näitä varten tarvittaneen tietorakenteista ainakin puurakenne (Huffman) ja jonkinlainen lista sanakirjaa varten (Lempel Ziv).
+Ajattelin toteuttaa työni käyttäen Huffman ja Lempel Ziv78 algoritmeja. Näitä varten tarvittaneen tietorakenteista ainakin puurakenne (Huffman) ja jonkinlainen lista sanakirjaa varten (Lempel Ziv 78).
 
 ## Ratkaistava ongelma
 
@@ -18,7 +18,7 @@ Tarkoitus on, että ohjelmalle voi antaa omalta koneeltaan tekstitiedoston syöt
 
 ## Tavoiteltu aika- ja tilavaativuus
 
-Koska tässä tehdään ainakin puu, niin silloin voisi kuvitella O(nlogn) toteutuvan
+Koska tässä tehdään ainakin Huffman puu, niin silloin voisi tavoitella O(nlogn) aikavaativuutta.
 
 ## Lähteet
 
