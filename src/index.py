@@ -50,12 +50,12 @@ def main():
         #huffman purku
         if selection == "1":
             huffman_algo = HuffmanAlgo(data)
-            print("Huffman pakkauksesta purettu teksti:")
+            print("\nHuffman pakkauksesta purettu teksti:")
             print(huffman_algo.huffman_decoding())
         #lz78 purku
         elif selection == "2":
             lz_seventyeight = LzSeventyeight(data)
-            print("LZ78 pakkauksesta purettu teksti:")
+            print("\nLZ78 pakkauksesta purettu teksti:")
             print(lz_seventyeight.decompress())
 
     else:
