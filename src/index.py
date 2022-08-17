@@ -4,8 +4,7 @@ from huffman_algo import HuffmanAlgo
 from lz_seventyeight import LzSeventyeight
 
 def main():
-    """Käynnistää sovelluksen ja vastaa nyt sovelluslogiikasta.
-    Kovin raakile vielä tässä vaiheessa, ei esim. virheen tarkistusta.
+    """Käynnistää sovelluksen ja vastaa sovelluslogiikasta.
     """
 
     selection = str(input("Haluatko pakata vai purkaa tiedoston?" +
