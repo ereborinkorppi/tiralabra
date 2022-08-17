@@ -74,7 +74,7 @@ def check_file(file_path, file_type):
         file_type: str -muotoinen syöte osoittamaan millaista tiedostoa haetaan.
 
     Returns:
-        True jos polku oikea ja se päättyy .txt, false jos ei.
+        True jos polku oikea ja file_type on haluttu, False jos ei.
     """
 
     if not os.path.exists(file_path):
