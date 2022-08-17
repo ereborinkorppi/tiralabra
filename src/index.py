@@ -28,7 +28,6 @@ def main():
         #lz78 pakkaus
         file_lz = file_path[:-4] + "_lz" + ".bin"
         lz_seventyeight = LzSeventyeight(data)
-        #compressed = lz_seventyeight.compress()
         with open(file_lz, "wb") as binary_file:
             binary_file.write(lz_seventyeight.compress())
         print("\nLempelZiv78 algoritmilla pakattu tiedosto löytyy polusta:\n" + file_lz)
