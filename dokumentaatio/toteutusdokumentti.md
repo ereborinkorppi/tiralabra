@@ -12,15 +12,14 @@ Pakkauskyvyn vertailu on aloitettu muutamilla erilaisilla tiedostoilla:
 - Pienellä 6 merkin tiedostolla kumpikin algoritmi tuottaa alkuperäistä suuremman pakkauksen. Huffman tiedoston koko on 217% alkuperäisestä ja LZ78 tiedoston koko on 617% alkuperäisestä.
 - 788 tavun kokoisen The 69 Eyes - Feel Berlin lyrics tiedoston kohdalla Huffman tiedoston koko on 74% alkuperäisestä (hieman pienempi) ja LZ78 tiedoston koko on 180% alkuperäisestä.
 - 2 megan vaihtuvasisältöisellä teksti tiedostolla pakkaus alkaa olla jo hyödyksi. Huffman tiedoston koko on 53% alkuperäisestä ja LZ78 tiedoston koko on 33% alkuperäisestä.
-- 2022 tavua sisältävä toisteisen (muut merkin a, paitsi yksi b (huffman bugista johtuen)) tiedoston kohdalla Huffman tiedoston koko on 13% alkuperäisestä ja LZ78 tiedoston koko on 11% alkuperäisestä.
+- 2022 tavua sisältävä toisteisen (kaikki merkit a) tiedoston kohdalla Huffman tiedoston koko on 13% alkuperäisestä ja LZ78 tiedoston koko on 10% alkuperäisestä.
 - Äkkiseltään näyttää siltä, että Huffman pakkauksella saadaan hyötyä myös hieman pienempien tiedostojen kanssa, mutta LZ78 näyttää tehokkaammalta suurien tiedostojen kanssa. 
 - Pakkauskykytestaus jatkuu...
 
 ## Työn puutteet ja parannusehdotukset
 
-Työ on vielä kovin kesken, eli puutteita riittää, merkittävimpinä:
-- ei virheiden käsittelyä käyttöliittymälle
-- Huffman algoritmin bugi, ei toimi yhden merkin tiedostoilla nyt
+- Huffman algoritmin voisi varmasti suorittaa tehokkaamminkin. 
+- Vaikka käyttöliittymään on otettu virhekäsittelyä, ei tiedostoja oikeasti tarkasteta, että onko pakkaustekniikka ollut se millä yritetään purkaa.
 
 ## Lähteet
 

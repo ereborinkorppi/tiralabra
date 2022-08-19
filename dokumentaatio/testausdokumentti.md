@@ -6,7 +6,7 @@ Unittestin avulla on suoritettu automatisoidusti ohjelman yksikkö- ja integraat
 
 ### Sovelluslogiikka
 
-index.py -moduulia, joka nyt vastaa käyttöliittymästä ja sovelluslogiikasta on testattu vain manuaalisesti erilaisilla tekstitiedostoilla pakkaamista ja niiden pakkausten purkamista. Virheiden mahdollisuutta tai käsittelyä ei ole vielä huomioitu tai testattu.
+index.py -moduulia, joka nyt vastaa käyttöliittymästä ja sovelluslogiikasta on testattu vain manuaalisesti erilaisilla tekstitiedostoilla pakkaamista ja niiden pakkausten purkamista. Tiedostosyötteisiin on lisätty kevyttä virheen tarkistusta ja tämän toimivuus testattu.
 
 ### Huffman pakkauksesta vastaava luokka
 
@@ -18,7 +18,7 @@ Lempel Ziv 78 pakkauksesta vastaava luokkaa `LzSeventyeight` testataan yksikköt
 
 ### Testikattavuus
 
-Testauksen haarautumakattavuus on 97%, vaikka tämä onkin hyvä, niin tarkempaa.
+Testauksen haarautumakattavuus on 96%, vaikka tämä onkin hyvä, niin tarkempaa yksikkötestausta tulisi tehdä.
 
 ![](./kuvat/testikattavuus.png)
 
