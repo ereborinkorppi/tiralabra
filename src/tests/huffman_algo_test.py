@@ -3,10 +3,8 @@ from huffman_algo import HuffmanAlgo
 
 class TestHuffmanAlgo(unittest.TestCase):
     def setUp(self):
-        self.compress = "AAABBC"
-        self.decompress = b'001B1C1A  \x07\xe0\x01'
-        self.huffman_algo_encoding = HuffmanAlgo(self.compress)
-        self.huffman_algo_decoding = HuffmanAlgo(self.decompress)
+        self.huffman_algo_encoding = HuffmanAlgo("AAABBC")
+        self.huffman_algo_decoding = HuffmanAlgo(b'001B1C1A  \x07\xe0\x01')
     
     def test_calculate_propability(self):
         test_symbols = {

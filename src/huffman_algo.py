@@ -26,7 +26,8 @@ class HuffmanAlgo:
         symbols = symbol_with_probs.keys()
         for symbol in symbols:
             self.nodes.append(Node(symbol_with_probs.get(symbol), symbol))
-
+        if len(self.nodes) == 1:
+            self.nodes.append(Node(1, "A"))
         while len(self.nodes) > 1:
             self.nodes = sorted(self.nodes, key=lambda x: x.prob)
 
