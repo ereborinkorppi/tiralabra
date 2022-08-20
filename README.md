@@ -14,6 +14,7 @@ Tämä on tiralabra -kurssin harjoitustyöni, jossa käsittelen pakkausalgoritme
 - [Viikko 2](./viikkoraportit/Viikko2.md)
 - [Viikko 3](./viikkoraportit/Viikko3.md)
 - [Viikko 4](./viikkoraportit/Viikko4.md)
+- [Viikko 5](./viikkoraportit/Viikko5.md)
 
 ## Komentorivitoiminnot
 
