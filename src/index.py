@@ -7,12 +7,12 @@ def main():
     """Käynnistää sovelluksen ja vastaa sovelluslogiikasta.
     """
 
-    selection = str(input("Haluatko pakata vai purkaa tiedoston?" +
+    selection = str(input("Haluatko pakata vai purkaa tekstitiedoston?" +
                           "\n1 = pakkaa\n2 = pura\nmuu lopettaa ohjelman\n"))
     file_found = False
     if selection == "1":
         while not file_found:
-            file_path = str(input("Syötä pakattavan tiedoston polku: "))
+            file_path = str(input("Syötä pakattavan tekstitiedoston polku: "))
             file_found = check_file(file_path, ".txt")
         with open(file_path, "r", encoding="utf-8") as file:
             data = file.read()
@@ -43,12 +43,12 @@ def main():
               "prosenttia alkuperäisestä tiedostosta")
 
     elif selection == "2":
-        selection = str(input("Puretaanko Huffman vai LZ78 algoritmilla pakattu tiedosto" +
+        selection = str(input("Puretaanko Huffman vai LZ78 algoritmilla pakattu tekstitiedosto" +
                           "\n1 = Huffman\n2 = LZ78\n"))
         if selection not in ("1", "2"):
             sys.exit()
         while not file_found:
-            file_path = str(input("Syötä purettavan tiedoston polku: "))
+            file_path = str(input("Syötä purettavan .bin -tiedoston polku: "))
             file_found = check_file(file_path, ".bin")
         with open(file_path, "rb") as file:
             data = file.read()
