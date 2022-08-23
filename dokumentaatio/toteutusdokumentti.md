@@ -8,16 +8,22 @@ Ohjelman käyttöliittymästä ja sovelluslogiikasta vastaa index.py, täällä 
 
 ## Suorituskyky vertailu pakkausten osalta
 
-Pakkauskyvyn vertailu on aloitettu muutamilla erilaisilla tiedostoilla: 
-- Pienellä 6 merkin tiedostolla kumpikin algoritmi tuottaa alkuperäistä suuremman pakkauksen. Huffman tiedoston koko on 217% alkuperäisestä ja LZ78 tiedoston koko on 617% alkuperäisestä.
-- 788 tavun kokoisen The 69 Eyes - Feel Berlin lyrics tiedoston kohdalla Huffman tiedoston koko on 74% alkuperäisestä (hieman pienempi) ja LZ78 tiedoston koko on 180% alkuperäisestä.
-- 2 megan vaihtuvasisältöisellä teksti tiedostolla pakkaus alkaa olla jo hyödyksi. Huffman tiedoston koko on 53% alkuperäisestä ja LZ78 tiedoston koko on 33% alkuperäisestä.
-- 2022 tavua sisältävä toisteisen (kaikki merkit a) tiedoston kohdalla Huffman tiedoston koko on 13% alkuperäisestä ja LZ78 tiedoston koko on 10% alkuperäisestä.
-- Äkkiseltään näyttää siltä, että Huffman pakkauksella saadaan hyötyä myös hieman pienempien tiedostojen kanssa, mutta LZ78 näyttää tehokkaammalta suurien tiedostojen kanssa. 
-- Pakkauskykytestaus jatkuu...
+Pakkauskykyä on vertailtu eri kokoisilla vain yhtä merkkiä sisältävillä tiedostoilla, sekä sisällöltään vaihtuvilla eri kokoisilla tiedostoilla.
+
+![](./kuvat/yhden_merkin.png)
+
+![](./kuvat/vaihtuva.png)
+
+Pienillä tiedostoilla kummassakkaan tapauksessa pakkauksesta ei ole hyötyä. 
+
+- Vain yhtä merkkiä sisältävillä tiedostoilla saadaan hyötyä jo nopeasti. Suhteellisen pienillä tiedostoilla Huffman algoritmi on tehokkaampi, mutta nopeasti tilanne kääntyy LZ78:n eduksi.
+- Vaihtuvasisältöisillä tiedostoilla aika pienelläkin tiedostolla Huffman algoritmi on jo hyödyksi, kun taas LZ78 "pakkaus" on yhä alkuperäistä suurempi. Kun mennään suuriin tekstitiedostoihin kääntyy tehokkuus LZ78:n eduksi tässäkin tapauksessa.
+
+Äkkiseltään näiden kokeilujen pohjalta voisi sanoa, että Huffman algoritmi antaa hieman aiemmin pakkaushyötyä, mutta LZ78 pakkaa huomattavasti pienempään tilaan kun tiedostokoko kasvaa riittävän suureksi.
 
 ## Työn puutteet ja parannusehdotukset
 
+- Mikäli pakattava tiedosto sisältää muitakin kuin utf-8 perusmerkkejä tulee ongelmia joko LZ78 pakkauksen kanssa, tai Huffman Algoritmilla purun kanssa. Tämä on selkeä virhe ohjelmassa nyt.
 - Huffman algoritmin voisi varmasti suorittaa tehokkaamminkin. 
 - Vaikka käyttöliittymään on otettu virhekäsittelyä, ei tiedostoja oikeasti tarkasteta, että onko pakkaustekniikka ollut se millä yritetään purkaa.
 
