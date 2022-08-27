@@ -4,7 +4,9 @@
 
 Ohjelman käyttöliittymästä ja sovelluslogiikasta vastaa index.py, täällä tapahtuu tiedostojen lukeminen ja kirjoittaminen. Huffman pakkaus/purku -algoritmia varten on oma luokka [HuffmanAlgo](https://github.com/ereborinkorppi/tiralabra/blob/main/src/huffman_algo.py) ja Lempel Ziv 78 pakkaus/purku -algoritmia varten on oma luokka [LzSeventyeight](https://github.com/ereborinkorppi/tiralabra/blob/main/src/lz_seventyeight.py). Lisäksi Huffman algoritmin puun toteuttamista varten on luokka [Node](https://github.com/ereborinkorppi/tiralabra/blob/main/src/node.py).
 
-## Saavutetut aika- ja tilavaativuudet
+## Saavutetut aikavaativuudet
+
+Omaa koodia arvioimalla uskoisin Huffman algoritmin pääsevän sekä pakkauksen, että purun osalta luokkaan O(n log n), vaikka tässä onkin aika monta välivaihetta, ja tyyppimuunnosta yms. hämäämässä. Lempel Ziv 78 algoritmi pääsee mielestäni luokkaan O(n) ja tämä onkin näistä huomattavasti selkeämpi toteutukseltaan.
 
 ## Suorituskyky vertailu pakkausten osalta
 

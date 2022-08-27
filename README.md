@@ -7,6 +7,7 @@ Tämä on tiralabra -kurssin harjoitustyöni, jossa käsittelen pakkausalgoritme
 - [Määrittelydokumentti](./dokumentaatio/maarittelydokumentti.md)
 - [Testausdokumentti](./dokumentaatio/testausdokumentti.md)
 - [Toteutusdokumentti](./dokumentaatio/toteutusdokumentti.md)
+- [Käyttöohje](./dokumentaatio/kaytto_ohje.md)
 
 ## Viikkoraportit
 
@@ -15,6 +16,7 @@ Tämä on tiralabra -kurssin harjoitustyöni, jossa käsittelen pakkausalgoritme
 - [Viikko 3](./viikkoraportit/Viikko3.md)
 - [Viikko 4](./viikkoraportit/Viikko4.md)
 - [Viikko 5](./viikkoraportit/Viikko5.md)
+- [Viikko 6](./viikkoraportit/Viikko6.md)
 
 ## Komentorivitoiminnot
 

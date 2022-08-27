@@ -28,6 +28,6 @@ Sovelluksen järjestelmätestit on suoritettu manuaalisesti.
 
 ### Asennus
 
-Sovelluksen alustusta ja testausta ei ole vielä suoritettu oman koneen ulkopuolella. Yliopiston Linux -ympäristöllä testaus on vielä tarkoitus tehdä.
+Sovelluksen toimivuutta testattu sekä omalla koneella, että yliopiston Linux ympäristössä onnistuneesti.
 
 Erilaisia konfiguraatioita ei ole testattu.
