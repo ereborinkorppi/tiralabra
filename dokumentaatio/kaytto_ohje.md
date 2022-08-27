@@ -52,4 +52,4 @@ poetry run invoke lint
 
 ## Testitiedostot
 
-Ohjelman pakkaustoimintaa voi testata omilla tekstitiedostoilla tai kansiosta [testitiedostot](./testitiedostot) löytyvillä tiedostoilla. Kun on pakannut jotain, voi tämän luomia pakattuja tiedostoja käyttää purun testaukseen.
+Ohjelman pakkaustoimintaa voi testata omilla tekstitiedostoilla tai kansiosta [testitiedostot](https://github.com/ereborinkorppi/tiralabra/tree/main/testitiedostot) löytyvillä tiedostoilla. Kun on pakannut jotain, voi tämän luomia pakattuja tiedostoja käyttää purun testaukseen.
