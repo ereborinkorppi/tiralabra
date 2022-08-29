@@ -6,7 +6,7 @@ Ohjelman käyttöliittymästä ja sovelluslogiikasta vastaa index.py, täällä 
 
 ## Saavutetut aikavaativuudet
 
-Omaa koodia arvioimalla uskoisin Huffman algoritmin pääsevän sekä pakkauksen, että purun osalta luokkaan O(n log n), vaikka tässä onkin aika monta välivaihetta, ja tyyppimuunnosta yms. hämäämässä. Lempel Ziv 78 algoritmi pääsee mielestäni luokkaan O(n) ja tämä onkin näistä huomattavasti selkeämpi toteutukseltaan.
+Omaa koodia arvioimalla uskoisin Huffman algoritmin pääsevän sekä pakkauksen, että purun osalta luokkaan O(n log n), vaikka tässä onkin aika monta välivaihetta, ja tyyppimuunnosta yms. hämäämässä. Lempel Ziv 78 algoritmi pääsee mielestäni sekä pakkauksen, että purun osalta luokkaan O(n) ja tämä onkin näistä huomattavasti selkeämpi toteutukseltaan.
 
 ## Suorituskyky vertailu pakkausten osalta
 
@@ -25,9 +25,11 @@ Pienillä tiedostoilla kummassakkaan tapauksessa pakkauksesta ei ole hyötyä.
 
 ## Työn puutteet ja parannusehdotukset
 
-- Mikäli pakattava tiedosto sisältää muitakin kuin utf-8 perusmerkkejä tulee ongelmia joko LZ78 pakkauksen kanssa, tai Huffman Algoritmilla purun kanssa. Tämä on selkeä virhe ohjelmassa nyt.
+- Mikäli pakattava tiedosto sisältää muitakin kuin utf-8 perusmerkkejä voi tulla ongelmia LZ78 pakkauksen kanssa. 
+- Huffman Algoritmilla on nyt ongelma ääkkösten käsittelyssä, ohjelma ei osaa lukea oikein itse 'utf-8' muotoon tallentamaansa puuta.
 - Huffman algoritmin voisi varmasti suorittaa tehokkaamminkin. 
 - Vaikka käyttöliittymään on otettu virhekäsittelyä, ei tiedostoja oikeasti tarkasteta, että onko pakkaustekniikka ollut se millä yritetään purkaa.
+- Toki ohjelmaa voisi muokata ja testata pakkausta myös muille kuin .txt -tiedostoille.
 
 ## Lähteet
 
