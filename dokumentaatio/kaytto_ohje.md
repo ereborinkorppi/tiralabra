@@ -4,7 +4,7 @@
 
 ### Viimeisin release
 
-Release tulossa...
+Hae ensin ohjelman viimeisin release [release](https://github.com/ereborinkorppi/tiralabra/releases/tag/v1.0).
 
 ### Asennus
 
