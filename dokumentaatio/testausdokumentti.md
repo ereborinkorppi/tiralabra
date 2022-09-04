@@ -28,6 +28,6 @@ Sovelluksen järjestelmätestit on suoritettu manuaalisesti.
 
 ### Asennus
 
-Sovelluksen toimivuutta testattu sekä omalla koneella, että yliopiston Linux ympäristössä onnistuneesti.
+Sovelluksen toimivuutta testattu sekä kehitykseen käytetyllä Rasperryllä, Windowsillä, että yliopiston Linux ympäristössä onnistuneesti. LZ78 algoritmin testeusta tosin 1 hajoaa Windowsilla testatessa, ilmeisesti bytes -muotoon koodauksessa on jotain laitekohtaista eroa.
 
 Erilaisia konfiguraatioita ei ole testattu.
